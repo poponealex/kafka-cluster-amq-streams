@@ -1,0 +1,33 @@
+replicaCount: 1
+
+image:
+  registry: docker.io
+  repository: provectuslabs/kafka-ui
+  pullPolicy: Always
+  tag: "v0.7.1"   
+existingSecret: "kafka-ui-user" 
+envs:
+  config: 
+    KAFKA_CLUSTERS_0_NAME: kafka
+    KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka-kafka-bootstrap:9093
+    KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL: SASL_PLAINTEXT
+    KAFKA_CLUSTERS_0_PROPERTIES_SASL_MECHANISM: SCRAM-SHA-512
+    KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG: "${sasl.jaas.config}"
+    #KAFKA_CLUSTERS_0_PROPERTIES_SSL_TRUSTSTORE_LOCATION: /config/ca.p12
+    #KAFKA_CLUSTERS_0_PROPERTIES_SSL_TRUSTSTORE_PASSWORD: @@jks_password@@
+
+
+#volumeMounts: 
+#  - name: truststore
+#    mountPath: /config
+    
+#volumes: 
+#  - name: truststore
+#    secret:
+#      secretName: kafka-cluster-ca-cert
+
+
+
+
+
+ 
