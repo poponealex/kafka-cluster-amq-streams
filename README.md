@@ -6,13 +6,13 @@ L'objectif de ce projet est de déployer un cluster Kafka dans un cluster OpenSh
 - une interface graphique permettant de visualiser le cluster en mode authentifié
 - un connecteur Debezium pour détecter les changements effectués dans la base de données, 
 - un registre de schéma pour valider le contenu des évènements générés et reçus
-- des producteurs et des des consommateurs utilisant le schéma de registre ou non écrits en java /spring boot ou en quarkus
+- des producteurs et des des consommateurs utilisant le schéma de registre ou non écrits en java avec Spring Boot ou avec Quarkus
 - le tout déployé via ArgoCD
 
 
 NB: ce projet n'est pas compatible avec d'autres distribution Kubernetes vanilla ou Rancher etc... car il utilise par exemple les routes OpenShift 
 
-on suppose par ailleurs que l'opérateur "Strimzi" ou "AMQ Streams", et "Apicurio Registry Operator" sont déjà installés
+On suppose par ailleurs que l'opérateur "Strimzi" ou "AMQ Streams", et "Apicurio Registry Operator" sont déjà installés
 
 # Détails
 ## Flux 
@@ -72,6 +72,7 @@ Le code des consommateurs et des producteur se trouvent également disponible à
 
 Le code ArgoCD est disponible ici: https://github.com/olivierits4u/kafka-argocd
 
+***
 
 NB: il est utile de créer un secret nommé regcred qui permet d'accéder au registre docker qui héberge les images
 
