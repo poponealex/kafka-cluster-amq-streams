@@ -4,7 +4,7 @@ image:
   registry: docker.io
   repository: provectuslabs/kafka-ui
   pullPolicy: Always
-  tag: "v0.7.1"   
+  tag: "v0.7.2"   
 existingSecret: "kafka-ui-user" 
 envs:
   config: 
@@ -16,6 +16,9 @@ envs:
     KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://registry-service:8080/apis/ccompat/v6
     #KAFKA_CLUSTERS_0_PROPERTIES_SSL_TRUSTSTORE_LOCATION: /config/ca.p12
     #KAFKA_CLUSTERS_0_PROPERTIES_SSL_TRUSTSTORE_PASSWORD: @@jks_password@@
+    AUTH_TYPE: "LOGIN_FORM"
+    SPRING_SECURITY_USER_NAME: admin
+    SPRING_SECURITY_USER_PASSWORD: admin
 
 
 #volumeMounts: 
